@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>LeapLog</RootNamespace>
+    <AssemblyName>LeapLog</AssemblyName>
+    <ApplicationIcon>green frog.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\admin-frog.jpg" />
+    <None Remove="images\asset-example.PNG" />
+    <None Remove="images\asset-image-colored.jpg" />
+    <None Remove="images\blur.jpg" />
+    <None Remove="images\drawing-ex.PNG" />
+    <None Remove="images\drawing-example-image.PNG" />
+    <None Remove="images\expense-ex.PNG" />
+    <None Remove="images\expense-example-image.PNG" />
+    <None Remove="images\expenses-image-colored.jpg" />
+    <None Remove="images\icon.ico" />
+    <None Remove="images\icon.jpg" />
+    <None Remove="images\journalsnip.PNG" />
+    <None Remove="images\leaplog-icon.png" />
+    <None Remove="images\leaplog_logo2.jpg" />
+    <None Remove="images\liability-ex.PNG" />
+    <None Remove="images\liability-image-colored.jpg" />
+    <None Remove="images\member-login-background.jpg" />
+    <None Remove="images\new-frog.jpg" />
+    <None Remove="images\oe-example.PNG" />
+    <None Remove="images\oe-image-colored.jpg" />
+    <None Remove="images\red-arrow1.jpg" />
+    <None Remove="images\red-arrow2.jpg" />
+    <None Remove="images\red-arrow3.jpg" />
+    <None Remove="images\red-income-arrow.jpg" />
+    <None Remove="images\red-one.jpg" />
+    <None Remove="images\red-two.jpg" />
+    <None Remove="images\rev-ex.PNG" />
+    <None Remove="images\revenue-example-image.PNG" />
+    <None Remove="images\revenue-image-colored.jpg" />
+    <None Remove="images\withdrawal-image-colored.jpg" />
+    <None Remove="logo.png" />
+    <None Remove="monitor %283%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Excel.dll">
+      <Guid>00020813-0000-0000-c000-000000000046</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.XlsIO.Net.Core" Version="18.1.0.46" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\admin-frog.jpg" />
+    <Resource Include="images\asset-example.PNG" />
+    <Resource Include="images\asset-image-colored.jpg" />
+    <Resource Include="images\blur.jpg" />
+    <Resource Include="images\drawing-example-image.PNG" />
+    <Resource Include="images\expense-example-image.PNG" />
+    <Resource Include="images\expenses-image-colored.jpg" />
+    <Resource Include="images\icon.ico" />
+    <Resource Include="images\icon.jpg" />
+    <Resource Include="images\journalsnip.PNG" />
+    <Resource Include="images\leaplog-icon.png" />
+    <Resource Include="images\leaplog_logo2.jpg" />
+    <Resource Include="images\liability-ex.PNG" />
+    <Resource Include="images\liability-image-colored.jpg" />
+    <Resource Include="images\member-login-background.jpg" />
+    <Resource Include="images\new-frog.jpg" />
+    <Resource Include="images\oe-example.PNG" />
+    <Resource Include="images\oe-image-colored.jpg" />
+    <Resource Include="images\red-arrow1.jpg" />
+    <Resource Include="images\red-arrow2.jpg" />
+    <Resource Include="images\red-arrow3.jpg" />
+    <Resource Include="images\red-income-arrow.jpg" />
+    <Resource Include="images\red-one.jpg" />
+    <Resource Include="images\red-two.jpg" />
+    <Resource Include="images\revenue-example-image.PNG" />
+    <Resource Include="images\revenue-image-colored.jpg" />
+    <Resource Include="images\withdrawal-image-colored.jpg" />
+    <Resource Include="logo.png" />
+    <Resource Include="monitor (3).png" />
+  </ItemGroup>
+
+</Project>

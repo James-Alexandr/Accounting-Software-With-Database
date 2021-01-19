@@ -1,0 +1,54 @@
+﻿<Window x:Class="LeapLog.AdminLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeapLog"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        Title="AdminLogin" Height="460" Width="340" Closing="Window_Closing" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <Border CornerRadius="20" BorderThickness="14" BorderBrush="#234264">
+        <Canvas HorizontalAlignment="Center" Margin="0,0,0,0" Width="320" VerticalAlignment="Stretch">
+            <Image Source="images\member-login-background.jpg" Height="436" Canvas.Left="-51" Width="424"/>
+            <Image Source="images\blur.jpg" Height="316" Canvas.Left="-132" Width="600" Canvas.Top="49" RenderTransformOrigin="0.5,0.5">
+                <Image.BitmapEffect>
+                    <BlurBitmapEffect Radius="30" />
+                </Image.BitmapEffect>
+            </Image>
+            <Rectangle Fill="#fdfdfd" Height="300" Stroke="Black" Canvas.Top="44" Width="244" Canvas.Left="39">
+                <Rectangle.Clip>
+                    <RectangleGeometry Rect="0,0,245,300"  RadiusX="20" RadiusY="20"/>
+                </Rectangle.Clip>
+            </Rectangle>
+            <Label x:Name="label" Content="Username:" RenderTransformOrigin="-0.897,0.593" FontSize="14" Height="16" Canvas.Left="68" Canvas.Top="162" Width="166" FontFamily="Microsoft Sans Serif" Padding="0,0,0,0"/>
+            <Label x:Name="label1" Content="Password: " FontSize="14" Height="16" Canvas.Left="68" Canvas.Top="216" Width="166" FontFamily="Microsoft Sans Serif" FlowDirection="LeftToRight" Padding="0,0,0,0"/>
+            <TextBox x:Name="userName" TabIndex="1" TextWrapping="Wrap" FontFamily="Segoe UI" FontStyle="Normal"  Height="24" Canvas.Left="68" Canvas.Top="182" Width="192" FlowDirection="LeftToRight" FontSize="13"/>
+            <PasswordBox x:Name="Pass" TabIndex="2" Width="192" Height="26" Canvas.Left="68" Canvas.Top="236" KeyUp="Pass_KeyUp"/>
+            <Button x:Name="enter_Button" BorderBrush="#353535" Background="#d9d9d9" Content="ENTER" Height="34" Canvas.Left="76" Canvas.Top="284" Width="80" RenderTransformOrigin="0.388,0.555" Click="enter_Button_Click" FontFamily="Calibri" FontWeight="Bold" FontSize="15" KeyUp="enter_Button_KeyUp">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="exit_Button" BorderBrush="#353535" Background="#d9d9d9" Content="EXIT" Height="34" Canvas.Left="174" Canvas.Top="284" Width="80" Click="exit_Button_Click" FontSize="15" FontFamily="Calibri" FontWeight="Bold">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="back2_Login" Content="BACK TO USER LOGIN" Canvas.Left="92" Canvas.Top="381" Width="144" Height="25" BorderBrush="#234264" Background="#96251c" Foreground="White" FontWeight="Bold" Click="back2_Login_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Image x:Name="image" Height="103" Margin="94,62,0,0" Width="110" Source="\images\admin-frog.jpg" Canvas.Left="15" RenderTransformOrigin="0.485,0.499" Canvas.Top="-10"/>
+        </Canvas>
+    </Border>
+</Window>

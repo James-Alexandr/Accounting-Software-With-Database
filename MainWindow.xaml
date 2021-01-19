@@ -1,0 +1,97 @@
+﻿<Window x:Class="LeapLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeapLog"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        Title="Dashboard" Height="650" Width="800" Closing="Window_Closing_1" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Fill="#234264"></Rectangle>
+        <Grid Background="#182C42" DockPanel.Dock="Top" VerticalAlignment="Top" MouseDown="Grid_MouseDown" Height="30">
+            <Image Source="\images\icon.jpg" Height="15" HorizontalAlignment="Left" Margin="10,8,0,8"/>
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Right">
+
+                <Button x:Name="MinimizeButton"
+                KeyboardNavigation.IsTabStop="False" Click="MinimizeButton_Click" 
+                        Height="20" Width="20" Margin="0, 0, 10, 0" Content="-" FontWeight="Bold" Foreground="#8f8f8f" Background="#cfcfcf" BorderBrush="#cfcfcf"/>
+
+                <Button x:Name="CloseButton" Content="x" Foreground="#8c5f5f" Background="#bd8282" BorderBrush="#bd8282"
+                KeyboardNavigation.IsTabStop="False" Height="20" Width="20" Click="CloseButton_Click"
+                        Margin="0, 0, 10, 0"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Width="750" Height="550"  Margin="25,75,25,-32" VerticalAlignment="Top">
+            <TabControl SelectionChanged="TabControl_SelectionChanged" HorizontalAlignment="Left" Height="530" VerticalAlignment="Bottom" Width="752" Background="White" BorderBrush="White">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0">
+                                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="white" />
+                                            <Setter TargetName="Border" Property="BorderBrush" Value="white" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Border" Property="Background" Value="#c7c7c7" />
+                                            <Setter TargetName="Border" Property="BorderBrush" Value="#c7c7c7" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem Header="Journal" Margin="-8, 0, 0, 0" Width="140">
+                    <Grid Background="#FFE5E5E5" Margin="0,0,2,0">
+                        <local:Journal Height="504" Width="745" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="T-Accounts" Margin="-5, 0, 0, 0" Width="140">
+                    <Grid Background="#FFE5E5E5">
+                        <local:T_Accounts x:Name="t_account_control" Height="504" Width="745" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Balance Sheet" Margin="-3, 0, 0, 0" Width="140">
+                    <Grid Background="#FFE5E5E5">
+                        <local:BalanceSheet x:Name="balance_sheet_control" Height="504" Width="745" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Income Statement" Margin="1, 0, 0, 0" Width="150">
+                    <Grid Background="#FFE5E5E5">
+                        <local:IncomeStatement x:Name="income_statement" Height="504" Width="745" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Statement of Owner's Equity" Margin="0, 0, -6, 0" Width="177">
+                    <Grid Background="#FFE5E5E5">
+                        <local:StatementofOwnersEquity x:Name="statementofownersequity" Height="504" Width="745" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button Content="Getting Started"  Width="144" Height="24"  FontWeight="Bold" BorderBrush="#008013" Background="#008013" Foreground="White" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-26,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Grid x:Name="gettingStartedWindow" Visibility="Collapsed" Margin="0,20,0,0">
+                <local:Dashboard HorizontalAlignment="Center" Height="530" VerticalAlignment="Center" Width="750"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

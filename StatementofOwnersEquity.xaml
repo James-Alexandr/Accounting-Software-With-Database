@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="LeapLog.StatementofOwnersEquity"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeapLog"
+             mc:Ignorable="d" 
+             Background="White" Height="504" Width="745">
+    <Grid>
+        <Label Content="From:" HorizontalAlignment="Left" Margin="126,230,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="From" HorizontalAlignment="Left" Margin="168,234,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionChanged="from_SelectionChanged"/>
+        <Label Content="To:" HorizontalAlignment="Left" Margin="138,254,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="To" HorizontalAlignment="Left" Margin="168,258,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionChanged="to_SelectionChanged"/>
+        <Label Content="Capital at start date:" HorizontalAlignment="Left" Height="26" Margin="372,200,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Net income:" HorizontalAlignment="Left" Height="28" Margin="412,228,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Withdrawals:" HorizontalAlignment="Left" Height="24" Margin="406,256,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Capital at end date:" HorizontalAlignment="Left" Height="26" Margin="372,284,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox Name="textbox1" HorizontalAlignment="Left" Margin="492,204,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox Name="textbox2" HorizontalAlignment="Left" Margin="492,232,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox Name="textbox3" HorizontalAlignment="Left" Margin="492,260,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox Name="textbox4" HorizontalAlignment="Left" Margin="492,288,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+
+        <!--help feature-->
+        <Label Content="Choose Date Range:" FontWeight="Bold" HorizontalAlignment="Left" Height="28" Margin="126,198,0,0" VerticalAlignment="Top" Width="132"/>
+        <Grid Name="SOEHelpWindow" Visibility="Collapsed" >
+            <Rectangle  HorizontalAlignment="Center" Height="504" Stroke="Black" VerticalAlignment="Center" Width="745" Fill="#bdbdbd" Opacity="0.5"/>
+            <TextBlock Foreground="#96251c" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center"  Text="The Statement of Owner's Equity calculates the correct amount of capital at the end of a specified time period." TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="320" Margin="0,80,0,0"/>
+            <TextBlock Foreground="#96251c" FontSize="18" HorizontalAlignment="Left" FontFamily="Calibri" Text="Start by selecting the date range you desire." TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="204" Margin="296,358,0,0"/>
+            <Image HorizontalAlignment="Left" Height="118" Source="\images\red-arrow1.jpg" Margin="182,313,0,0" VerticalAlignment="Top" Width="109"/>
+        </Grid>
+        <Button Name="SOEHelpButton" Content="Help" HorizontalAlignment="Left" Margin="685,10,0,0" VerticalAlignment="Top"  Width="50" Height="24"  FontWeight="Bold" BorderBrush="#96251c" Background="#96251c" Foreground="White" Click="SOEHelpButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</UserControl>

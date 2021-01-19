@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="LeapLog.Dashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeapLog"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="650">
+    <Grid Background="White">
+        <Rectangle Fill="#008013" Margin="0,0,0,415"></Rectangle>
+        <Label Name="welcomeLbl" Content="Getting Started Guide" Foreground="White" FontSize="48" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" Height="78" Width="474"/>
+
+        <Grid Name="accGrid" Visibility="Visible">
+            <Rectangle Fill="LightGray"  HorizontalAlignment="Left" Height="312" Margin="266,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="346"/>
+            <TextBlock FontSize="18" HorizontalAlignment="Left" Margin="284,0,0,0" Text="Accounting is the process of keeping financial accounts. It uses the accounting equation of A = L + OE, which represents the relationship between assets, liabilities, and owner's equity. For every transaction recorded, the total debits equal the total credits." TextWrapping="Wrap" VerticalAlignment="Center" Height="181" Width="311"/>
+            <Image Source="\images\asset-image-colored.jpg" HorizontalAlignment="Left" Height="75" Width="75" Margin="284,369,0,0" VerticalAlignment="Top"/>
+            <Image Source="\images\liability-image-colored.jpg" HorizontalAlignment="Left" Height="75" Width="75" Margin="402,369,0,0" VerticalAlignment="Top"/>
+            <Image Source="\images\oe-image-colored.jpg" HorizontalAlignment="Left" Height="75" Width="75" Margin="511,369,0,0" VerticalAlignment="Top"/>
+            <Label Content="=" FontSize="20" HorizontalAlignment="Left" Margin="369,388,0,0" VerticalAlignment="Top"/>
+            <Label Content="+" FontSize="20" HorizontalAlignment="Left" Margin="482,388,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid Name="assetGrid" Visibility="Collapsed">
+            <Rectangle Fill="LightGray"  HorizontalAlignment="Left" Height="312" Margin="265,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="346"/>
+            <TextBlock HorizontalAlignment="Left" Margin="293,174,0,0" Text="An asset is any resource owned by a business or person. Assets can include cash, buildings, equipment, or Accounts Receivable. Accounts receivable is an account that represents the debt owed to the business by clients. An asset account increases on the debit, or left side, of the account." TextWrapping="Wrap" VerticalAlignment="Top" Width="293" Height="123"/>
+            <Image Source="\images\asset-image-colored.jpg" HorizontalAlignment="Left" Height="100" Margin="385,306,0,0" VerticalAlignment="Top" Width="100"/>
+        </Grid>
+        <Grid Name="liabilityGrid" Visibility="Collapsed">
+            <Rectangle Fill="LightGray"  HorizontalAlignment="Left" Height="312" Margin="267,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="346"/>
+            <TextBlock HorizontalAlignment="Left" Margin="295,175,0,0" Text="A liability can be thought of as debt to another entity. The most common example of a liability is the Accounts Payable account, which represents credit that the business owes to others. A liability account increases on the credit, or right side, of the account." TextWrapping="Wrap" VerticalAlignment="Top" Width="292" Height="123"/>
+            <Image Source="\images\liability-image-colored.jpg" HorizontalAlignment="Left" Height="100" Margin="387,307,0,0" VerticalAlignment="Top" Width="100"/>
+        </Grid>
+        <Grid Name="oeGrid" Visibility="Collapsed">
+            <Rectangle Fill="LightGray"  HorizontalAlignment="Left" Height="312" Margin="266,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="346"/>
+            <TextBlock HorizontalAlignment="Left" Margin="294,174,0,0" Text="Owner's Equity is the business owner's investment into their company. An account that represents an owner's investment is a capital account. Many other accounts affect owner's equity including withdrawal, revenue, and expense accounts. An owner's equity account increases on the credit, or right side, of the account." TextWrapping="Wrap" VerticalAlignment="Top" Width="293" Height="123"/>
+            <Image Source="\images\oe-image-colored.jpg" HorizontalAlignment="Left" Height="76" Margin="459,283,0,0" VerticalAlignment="Top" Width="75"/>
+            <Image Source="\images\revenue-image-colored.jpg" HorizontalAlignment="Left" Height="74" Margin="459,373,0,0" VerticalAlignment="Top" Width="75"/>
+            <Image Source="\images\expenses-image-colored.jpg" HorizontalAlignment="Left" Height="74" Margin="346,373,0,0" VerticalAlignment="Top" Width="75"/>
+            <Image Source="\images\withdrawal-image-colored.jpg" HorizontalAlignment="Left" Height="76" Margin="346,283,0,0" VerticalAlignment="Top" Width="75"/>
+        </Grid>
+
+        <Button Name="accBtn"  Content="What is Accounting?" HorizontalAlignment="Left" Margin="65,210,0,0" VerticalAlignment="Top" Height="35" Width="132" Click="accBtn_Click"/>
+        <Button Name="assetBtn" Content="What is an Asset?" HorizontalAlignment="Left" Margin="65,260,0,0" VerticalAlignment="Top" Height="34" Width="132" Click="assetBtn_Click"/>
+        <Button Name="liabilityBtn" Content="What is a Liability?" HorizontalAlignment="Left" Margin="65,318,0,0" VerticalAlignment="Top" Height="34" Width="132" Click="liabilityBtn_Click"/>
+        <Button Name="oeBtn" Content="What is Owner's Equity?" HorizontalAlignment="Left" Margin="65,376,0,0" VerticalAlignment="Top" Height="34" Width="132" Click="oeBtn_Click"/>
+        <Rectangle Fill="#008013" Margin="0,496,0,0"></Rectangle>
+
+    </Grid>
+</UserControl>

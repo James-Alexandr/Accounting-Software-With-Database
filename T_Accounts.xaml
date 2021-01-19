@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="LeapLog.T_Accounts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeapLog"
+             mc:Ignorable="d" 
+             d:DesignHeight="504" d:DesignWidth="745"
+             Background="White">
+    <Grid>
+        <!-- assets grid -->
+        <DataGrid BorderThickness="0.5" RowHeaderWidth="0" Background="#d6d6d6" BorderBrush="#d6d6d6" x:Name="a_Grid" SelectionUnit="Cell" HorizontalAlignment="Left" Height="370" VerticalAlignment="Center" Width="200" RenderTransformOrigin="0.5,0.5" Margin="38,0,0,0" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#FFD6D6D6" AlternatingRowBackground="#FFE4E4E4">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#234264"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                    <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_MouseDown"/>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Assets" Width="*" Binding="{Binding Account}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- liabilities grid -->
+        <DataGrid BorderThickness="0.5" RowHeaderWidth="0" Background="#d6d6d6" BorderBrush="#d6d6d6" x:Name="l_Grid" SelectionMode="Single" HorizontalAlignment="Center" Height="370" VerticalAlignment="Center" Width="198" RenderTransformOrigin="0.5,0.5" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#FFD6D6D6" AlternatingRowBackground="#FFE4E4E4">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#234264"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                    <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_MouseDown"/>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Liabilities" Width="*" Binding="{Binding Account}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- owner's equity grid -->
+        <DataGrid BorderThickness="0.5" RowHeaderWidth="0" Background="#d6d6d6" BorderBrush="#d6d6d6" x:Name="oe_Grid" SelectionMode="Single" HorizontalAlignment="Left" Height="370" VerticalAlignment="Center" Width="199" RenderTransformOrigin="0.5,0.5" Margin="506,0,0,0" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#FFD6D6D6" AlternatingRowBackground="#FFE4E4E4">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#234264"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                    <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_MouseDown"/>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Owner's Equity" Width="*" Binding="{Binding Account}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--help feature-->
+        <Grid x:Name="taccHelpWindow" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Center" Height="504" Stroke="Black" VerticalAlignment="Center" Width="745" Fill="#bdbdbd" Opacity="0.5"/>
+            <TextBlock Foreground="#96251c" FontFamily="Calibri" FontSize="18" HorizontalAlignment="Center" Margin="0,10,0,0" Text="The T-Accounts section allows the user to look at each account created individually. The accounts are separated by type." TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="478"/>
+            <TextBlock Foreground="#96251c" FontFamily="Calibri" FontSize="18"  HorizontalAlignment="Center" Margin="0,446,0,0" Text="Click on an account name to see the financial history of that account." TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="478"/>
+        </Grid>
+        <Button x:Name="taccHelpButton" Content="Help" HorizontalAlignment="Left" Margin="685,10,0,0" VerticalAlignment="Top"  Width="50" Height="24"  FontWeight="Bold" BorderBrush="#96251c" Background="#96251c" Foreground="White" Click="taccHelpButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</UserControl>

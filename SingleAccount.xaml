@@ -1,0 +1,72 @@
+﻿<Window x:Class="LeapLog.SingleAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeapLog"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        BorderBrush="#182C42"
+        BorderThickness="2"
+        Title="SingleAccount" Height="426" Width="462">
+    <Grid Background="White">
+        <Grid Background="#182C42" DockPanel.Dock="Top" VerticalAlignment="Top" MouseDown="Grid_MouseDown_1" Height="30">
+            <Image Source="\images\icon.jpg" Height="15" HorizontalAlignment="Left" Margin="10,8,0,8"/>
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Right">
+
+                <Button x:Name="MinimizeButton"
+                KeyboardNavigation.IsTabStop="False"
+                        Height="20" Width="20" Margin="0, 0, 10, 0" Content="-" FontWeight="Bold" Foreground="#8f8f8f" Background="#cfcfcf" BorderBrush="#cfcfcf" Click="MinimizeButton_Click_1"/>
+
+                <Button x:Name="CloseButton" Content="x" Foreground="#8c5f5f" Background="#bd8282" BorderBrush="#bd8282"
+                KeyboardNavigation.IsTabStop="False" Height="20" Width="20"
+                        Margin="0, 0, 10, 0" Click="CloseButton_Click_1"/>
+            </StackPanel>
+        </Grid>
+        <!-- account name label -->
+        <Label Content="ACCOUNT NAME" Name="accountName" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+
+        <!-- account debits and credits dataGrids -->
+        <DataGrid BorderThickness="0.5" RowHeaderWidth="0" Background="#d6d6d6" BorderBrush="#d6d6d6" x:Name="debitGrid" Margin="44,74,256,74" AutoGenerateColumns="False" IsEnabled="False" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#FFD6D6D6" AlternatingRowBackground="#FFE4E4E4">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#234264"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                    <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Debit" Width="*" Binding="{Binding Debit}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid BorderThickness="0.5" RowHeaderWidth="0" Background="#d6d6d6" BorderBrush="#d6d6d6" x:Name="creditGrid" Margin="269,74,31,74" AutoGenerateColumns="False" IsEnabled="False" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#FFD6D6D6" AlternatingRowBackground="#FFE4E4E4">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#234264"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                    <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Credit" Width="*" Binding="{Binding Credit}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!-- total account balance -->
+        <Label Content="Balance:" HorizontalAlignment="Left" Margin="297,350,0,0" VerticalAlignment="Top" />
+        <Label Content="" Name="balanceLbl" HorizontalAlignment="Left" Margin="355,350,0,0" VerticalAlignment="Top" />
+
+    </Grid>
+</Window>
